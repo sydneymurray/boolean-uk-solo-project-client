@@ -1,0 +1,66 @@
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2ch;
+  }
+  
+  .bg-active {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .modal {
+    position: relative;
+    background-color: rgb(230, 230, 230, 50);
+    border-radius: 10px;
+    padding-bottom: 3ch;
+    padding-top: 3ch;
+    grid-gap: 3ch;
+  }
+  
+  .modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    width: 4ch;
+  }
+  
+  .pay-modal-container{
+    width: 45ch;
+    display: grid;
+    grid-template:
+    "payment-account-label payment-account-selection" auto
+    "payment-amount-label payment-amount-input" auto
+    "payee-account-label payee-account-input" auto
+    "payment-comments-label payment-comments-input" auto/
+    12ch 25ch;
+    grid-gap: 2ch;
+    margin-left: 4ch;
+    margin-top: 2ch;
+    margin-bottom: 3ch;
+  }
+  
+  .modal-pay-button{
+    padding: 1ch 2ch 1ch 2ch;
+    background-color: rgb(152, 205, 248);
+    border-radius: 1rem;
+    font-weight: bold;
+    width: 20ch;
+    margin-left: auto;
+    margin-right: auto
+  }
+  
+  .modal-pay-button:hover {
+    fill: white;
+    background-color: white;
+  }
+  
+  

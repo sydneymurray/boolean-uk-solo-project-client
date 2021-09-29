@@ -5,7 +5,7 @@ import loginCustomer from "./loginCustomer"
 
 export default function ModalPopUp() {
   const setModal = useStore((store) => store.setModal)
-  const setLoggedInCustomer = useStore((store) => store.setLoggedInCustomer)
+  const setLoggedInCustomer = useStore(store => store.setLoggedInCustomer)
   const history = useHistory()
   
   function handleSubmit(event){

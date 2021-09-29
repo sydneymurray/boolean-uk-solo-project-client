@@ -1,4 +1,4 @@
-import "../styles/PaymentModal.css"
+import "../styles/PaymentSuccessModal.css"
 import {useHistory} from "react-router-dom"
 import {accountsURL} from "./data";
 import  useStore from "../hooks/useStore"
@@ -12,32 +12,22 @@ export default function ModalPopUp() {
   let setAccountStatement = useStore(store => store.setAccountStatement)
   let accountStatement = useStore(store => store.accountStatement)
   
-  let [accounts, setAccounts] = useState(null)
-  useEffect(retrieveAccounts,[])
-
-  let loggedInCustomer = useStore(store => store.loggedInCustomer)
-  if (!loggedInCustomer || !accounts) return <></>
-  accounts = [
-    {type: "", accountID: "---SELECT-AN-ACCOUNT---"},
-    {type: "", accountID: "CASH PAYMENT"},...accounts]
-
-  function retrieveAccounts(){
-    fetch(accountsURL,{credentials: "include"})
-    .then(res=>res.json())
-    .then(accounts => setAccounts(accounts))
-  }
 
   function handleSubmit(event, setAccountStatement, accountStatement){
     event.preventDefault()
-    const paymentData = {
-      payerAccount: Number(event.target.payerAccount.value),
-      payeeAccount: Number(event.target.payeeAccount.value),
-      amount: Number(event.target.amount.value),
-      comments: event.target.comments.value
+
     }
-    makePayment(paymentData, history, setModal, setAccountStatement, accountStatement)
+
+    if (!accountStatement.account) return
+    retrieveTransactions(setAccountStatement, accountStatement.account)
+
+    function retrieveTransactions(setAccountStatement, account){
+    fetch(accountStatementURL+account.accountID,{credentials: "include"})
+      .then(res=>res.json())
+      .then(transactions=>setAccountStatement({account, transactions}))
+    }
   }
-    
+
   return <>
     <form className="modal-background" onSubmit={event=>{
       handleSubmit(event, setAccountStatement, accountStatement)}}>
@@ -78,6 +68,7 @@ export default function ModalPopUp() {
 
 
 /*
+
   function handleSubmit(event, setAccountStatement, accountStatement){
     event.preventDefault()
     const paymentData = {
@@ -88,19 +79,15 @@ export default function ModalPopUp() {
     }
     makePayment(paymentData, history, setModal)
 
-    if (!accountStatement.account) return
-    retrieveTransactions(setAccountStatement, accountStatement.account)
+    if (!accountStatement) return
+    retrieveTransactions(accountStatement.account.accountID)
 
-    function retrieveTransactions(setAccountStatement, account){
-      fetch(accountStatementURL,{
-        method:"GET",
-        headers:{accountid: account.accountID},
-        credentials: "include"})
-        .then(res=>res.json())
-        .then(transactions => {
-          console.log(transactions)
-          setAccountStatement({account,transactions})})
+    async function retrieveTransactions(accountID, setAccountStatement, accountStatement){
+    let dbResponse = await fetch(accountStatementURL+accountID,{credentials: "include"})
+    console.log(dbResponse)
+    // setAccountStatement({account,transactions})  
     }
   }
+
 
 */

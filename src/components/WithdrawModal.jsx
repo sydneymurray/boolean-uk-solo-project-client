@@ -6,6 +6,8 @@ import {useEffect, useState} from "react"
 import makePayment from "./makePayment"
 
 export default function ModalPopUp() {
+  const accountStatement = useStore(store => store.accountStatement)
+  const setAccountStatement = useStore(store => store.setAccountStatement)  
   let [accounts, setAccounts] = useState(null)
   const history = useHistory()
   useEffect(retrieveAccounts,[])
@@ -20,23 +22,21 @@ export default function ModalPopUp() {
     .then(res=>res.json())
     .then(accounts => setAccounts(accounts))
   }
+
   function handleSubmit(event){
     event.preventDefault()
-    
-  const paymentData = {
-    payerAccount: Number(event.target.payerAccount.value),
-    amount: Number(event.target.amount.value),
-    comments: event.target.comments.value
-  }
-
-  makePayment(paymentData, history, setModal)
-
+    const paymentData = {
+      payerAccount: Number(event.target.payerAccount.value),
+      amount: Number(event.target.amount.value),
+      comments: event.target.comments.value
+    }
+    makePayment(paymentData, history, setModal, setAccountStatement, accountStatement)
   }
 
   return <>
     <form onSubmit={handleSubmit} className="modal-background">
       <div className="modal">
-        <h1>Make A Payment</h1>
+        <h1>Withdraw Funds</h1>
         <div className="pay-modal-container">
 
           <label className="payment-account-label">Account Number:</label>
@@ -55,7 +55,7 @@ export default function ModalPopUp() {
 
         </div>
         <button type="submit" className="modal-pay-button" onSubmit={handleSubmit}>
-          Pay</button>
+          Withdraw</button>
         <img className="modal-close" src="./close-button.svg" onClick={() => setModal("")} alt=""/>
       </div>
     </form>

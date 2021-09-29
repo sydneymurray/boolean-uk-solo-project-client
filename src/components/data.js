@@ -1,4 +1,5 @@
-export let baseURL = "http://localhost:3100"
+// export let baseURL = "http://localhost:3100"
+export let baseURL = process.env.REACT_APP_API_URL
 export let accountsURL = baseURL + "/accounts"
 export let transactionsURL = baseURL + "/transactions"
 export let customerURL = baseURL + "/customer"

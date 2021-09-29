@@ -9,7 +9,6 @@ export default function SideBarAccount({account}){
     retrieveTransactions()
     
     function retrieveTransactions(){
-      console.log(account.accountID)
       fetch(accountStatementURL,{
         method:"GET",
         headers:{accountid: account.accountID},
