@@ -4,13 +4,13 @@ import {accountsURL} from "./data";
 import  useStore from "../hooks/useStore"
 import {useEffect, useState} from "react"
 import makePayment from "./makePayment"
-import {accountStatementURL} from "./data"
 
 export default function ModalPopUp() {
   const setModal = useStore(store => store.setModal)
   const history = useHistory()
   let setAccountStatement = useStore(store => store.setAccountStatement)
-  let accountStatement = useStore(store => store.accountStatement)
+  let addTransaction = useStore(store => store.addTransaction)
+//  let accountStatement = useStore(store => store.accountStatement)
   
   let [accounts, setAccounts] = useState(null)
   useEffect(retrieveAccounts,[])
@@ -27,7 +27,7 @@ export default function ModalPopUp() {
     .then(accounts => setAccounts(accounts))
   }
 
-  function handleSubmit(event, setAccountStatement, accountStatement){
+  function handleSubmit(event, addTransaction, accountStatement){
     event.preventDefault()
     const paymentData = {
       payerAccount: Number(event.target.payerAccount.value),
@@ -35,12 +35,12 @@ export default function ModalPopUp() {
       amount: Number(event.target.amount.value),
       comments: event.target.comments.value
     }
-    makePayment(paymentData, history, setModal, setAccountStatement, accountStatement)
+    makePayment(paymentData, history, setModal, addTransaction, accountStatement)
   }
     
   return <>
     <form className="modal-background" onSubmit={event=>{
-      handleSubmit(event, setAccountStatement, accountStatement)}}>
+      handleSubmit(event, addTransaction)}}>
 
       <div className="modal">
         <h1>Make A Payment</h1>

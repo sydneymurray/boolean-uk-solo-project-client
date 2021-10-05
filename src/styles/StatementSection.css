@@ -4,6 +4,7 @@
   padding: 1ch;
   background-color: rgb(240, 240, 240); 
   overflow: auto;
+  height: 70vh;
 }
 
 .safe-image{

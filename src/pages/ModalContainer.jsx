@@ -1,5 +1,6 @@
 import useStore from "../hooks/useStore"
 import React from "react"
+import { useHistory } from "react-router"
 
 import RegisterModal from "../components/RegisterModal"
 import LoginModal from "../components/LoginModal"
@@ -21,12 +22,13 @@ const modals = {
 }
 
 export function ModalContainer() {
-  const modal = useStore((store) => store.modal);
-  const Modal = modals[modal];
+  const history = useHistory()
+  const modal = useStore((store) => store.modal)
+  const Modal = modals[modal]
 
-  if (!Modal) return null;
-
-  return <Modal />;
+  if (!Modal) return null
+  //if (!Modal) history.push("/accounts") 
+  return <Modal />
 }
 
 

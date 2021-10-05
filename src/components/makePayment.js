@@ -1,6 +1,6 @@
 import {transactionsURL} from "./data.js"
 
-export default function makePayment(transactionData, history, setModal, setAccountStatement, accountStatement) {
+export default function makePayment(transactionData, history, setModal, addTransaction, accountStatement) {
   fetch(transactionsURL, {
     credentials: "include",
     method: "POST",
@@ -9,15 +9,16 @@ export default function makePayment(transactionData, history, setModal, setAccou
   })
   .then(promise=> promise.json())
   .then(dbResponse=>{
-    console.log(accountStatement)
     if(dbResponse.msg){
       alert(dbResponse.msg)
       return
-    }    
+    } 
+    //accountStatement.transactions = [dbResponse, ...accountStatement.transactions]
+    addTransaction(dbResponse)   
     setModal("")
+    //window.location.reload(true)
     alert("Payment Succesful")
-    accountStatement.transactions = [dbResponse, ...accountStatement.transactions]
-    setTimeout(() => setAccountStatement(accountStatement), 5000)
+
     //history.push("/accounts")
   })
 }

@@ -16,7 +16,6 @@ export default function ModalPopUp() {
       password: event.target.password.value
     }
     loginCustomer(customer, history, setModal, setLoggedInCustomer)    
-
   }
 
   return <>

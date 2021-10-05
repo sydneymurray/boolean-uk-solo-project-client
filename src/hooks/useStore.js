@@ -4,12 +4,25 @@ import {accountsURL, transactionsURL, customerURL} from "../components/data"
 const useStore = create((set, get)=>({
   loggedInCustomer: null,
   setLoggedInCustomer: customer => set(state => ({loggedInCustomer: customer})),
+  accounts: null,
+  retrieveAccounts(){
+    fetch(accountsURL,{credentials: "include"})
+    .then(res=>res.json())
+    .then(accounts => set({accounts}))
+  },
+  retrieveLoggedInCustomer(){
+    fetch(customerURL,{credentials: "include"})
+    .then(res=>res.json())
+    .then(loggedInCustomer => set({loggedInCustomer}))
+  },
   modal: "",
   modalData: {},
   setModal: (modalName, modalData) => {
     set(store => ({modal: modalName, modalData: modalData}))},
   accountStatement: null,
   setAccountStatement: statement => set(state => ({accountStatement: statement})),
+  addTransaction: transaction => set(state => ({...state.accountStatement,
+    transactions: [transaction, ...state.accountStatement.transactions]})),
 }))
 export default useStore
 
