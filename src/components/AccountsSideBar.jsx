@@ -6,11 +6,17 @@ export default function AccountsSideBar(){
   const setModal = useStore(store => store.setModal)
   let accounts = useStore(store => store.accounts)
   let loggedInCustomer = useStore(store => store.loggedInCustomer)
+  let retrieveLoggedInCustomer = useStore(store => store.retrieveLoggedInCustomer)
+
   console.log(accounts)
   console.log(loggedInCustomer)
 
-  if (!loggedInCustomer || !accounts) return <></>
-
+  if (!accounts || accounts.err==='Not Logged In') return <></>
+  if (!loggedInCustomer) {
+    retrieveLoggedInCustomer()
+    return <></>
+  }
+  console.log(loggedInCustomer)
   return <>
     <section className="account-sidebar-container">
       <h2 className="sidebar-customer-name" onClick={() => setModal("customerDetails")}>

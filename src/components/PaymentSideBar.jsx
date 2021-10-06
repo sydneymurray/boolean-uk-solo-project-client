@@ -3,6 +3,8 @@ import useStore from "../hooks/useStore"
 
 export default function PaymentSideBar(){
   const setModal = useStore(store => store.setModal)
+  let loggedInCustomer = useStore(store => store.loggedInCustomer)
+  if (!loggedInCustomer) return <></>
 
   return <>
     <section className="payment-sidebar-container">

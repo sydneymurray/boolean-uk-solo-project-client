@@ -4,7 +4,6 @@ import {useStore} from "../Hooks/Store";
 
 export default function ModalPopUp() {
   const setModal = useStore((store) => store.setModal)
-  const setModal = useStore((store) => store.setModal)
 
   return (
     <div className="modal-bg">

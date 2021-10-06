@@ -1,5 +1,5 @@
 import create from "zustand"
-import {accountsURL, transactionsURL, customerURL} from "../components/data"
+import {accountsURL, transactionsURL, updateCustomerURL} from "../components/data"
 
 const useStore = create((set, get)=>({
   loggedInCustomer: null,
@@ -11,7 +11,7 @@ const useStore = create((set, get)=>({
     .then(accounts => set({accounts}))
   },
   retrieveLoggedInCustomer(){
-    fetch(customerURL,{credentials: "include"})
+    fetch(updateCustomerURL,{credentials: "include"})
     .then(res=>res.json())
     .then(loggedInCustomer => set({loggedInCustomer}))
   },
