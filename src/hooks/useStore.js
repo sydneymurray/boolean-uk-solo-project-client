@@ -1,5 +1,5 @@
 import create from "zustand"
-import {accountsURL, transactionsURL, updateCustomerURL} from "../components/data"
+import {accountsURL, updateCustomerURL} from "../components/data"
 
 const useStore = create((set, get)=>({
   loggedInCustomer: null,

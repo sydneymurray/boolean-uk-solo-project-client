@@ -1,8 +1,6 @@
 import "../styles/PaymentModal.css"
 import {useHistory} from "react-router-dom"
-import {accountsURL} from "./data";
 import  useStore from "../hooks/useStore"
-import {useEffect, useState} from "react"
 import makePayment from "./makePayment"
 
 export default function ModalPopUp() {

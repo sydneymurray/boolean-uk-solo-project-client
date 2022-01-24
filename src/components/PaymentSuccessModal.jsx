@@ -67,27 +67,3 @@ export default function ModalPopUp() {
 }
 
 
-/*
-
-  function handleSubmit(event, setAccountStatement, accountStatement){
-    event.preventDefault()
-    const paymentData = {
-      payerAccount: Number(event.target.payerAccount.value),
-      payeeAccount: Number(event.target.payeeAccount.value),
-      amount: Number(event.target.amount.value),
-      comments: event.target.comments.value
-    }
-    makePayment(paymentData, history, setModal)
-
-    if (!accountStatement) return
-    retrieveTransactions(accountStatement.account.accountID)
-
-    async function retrieveTransactions(accountID, setAccountStatement, accountStatement){
-    let dbResponse = await fetch(accountStatementURL+accountID,{credentials: "include"})
-    console.log(dbResponse)
-    // setAccountStatement({account,transactions})  
-    }
-  }
-
-
-*/

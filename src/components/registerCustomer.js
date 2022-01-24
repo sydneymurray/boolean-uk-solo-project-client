@@ -11,7 +11,8 @@ export default function registerCustomer(newCustomer, setModal){
     if (resp.ok) {
       setModal("")
       alert(`Registration Successful: Please Login with username ${newCustomer.userName}`)
-    } else alert("Incorrect Registration Details. Try using a different username.")
+    } 
+    else alert("Incorrect Registration Details. Try using a different username.")
   })
 }
 

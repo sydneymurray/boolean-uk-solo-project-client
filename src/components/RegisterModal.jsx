@@ -1,11 +1,9 @@
 import registerCustomer from "./registerCustomer";
 import "../styles/RegisterModal.css";
 import  useStore from "../hooks/useStore";
-import {useHistory} from "react-router-dom";
 
 export default function ModalPopUp() {
   const setModal = useStore((store) => store.setModal);
-  const history = useHistory();
   
   function registerNewCustomer(event){
     event.preventDefault()
@@ -48,12 +46,4 @@ export default function ModalPopUp() {
   </>
 }
 
-/*
-  const firstName = loggedInCustomer.firstName.charAt(0).toUpperCase() + loggedInCustomer.firstName.slice(1);
-  const lastName = loggedInCustomer.lastName.charAt(0).toUpperCase() + loggedInCustomer.lastName.slice(1);
-
-capFirstChar(name){  
-  return name.charAt(0).toUpperCase() + name.slice(1)
-}
-*/
 

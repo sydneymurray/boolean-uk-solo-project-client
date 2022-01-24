@@ -11,6 +11,7 @@ export default function createNewAccount(newAccount, history, setModal){
     if (resp.ok) {
       setModal("")
       //window.location.reload(false)
+      //window.location.reload()
       alert(`New Account Successfully Created`)
     } else alert("Account Creation Was Unsuccessful")
   })

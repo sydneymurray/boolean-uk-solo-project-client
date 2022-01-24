@@ -21,7 +21,6 @@ export default function ModalPopUp() {
       type: event.target.accountType.value
     }
     createNewAccount(accountData, history, setModal)
-
   }
   return <>
     <form onSubmit={handleSubmit} className="modal-background">

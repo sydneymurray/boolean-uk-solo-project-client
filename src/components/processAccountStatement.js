@@ -1,7 +1,7 @@
 export default function processAccountStatement(accountStatement){
-    //console.log(accountStatement)
     let processedStatement = []
     let balance=0
+    
     for (let i = accountStatement.transactions.length-1; i > -1 ; i--){
     let processedTransaction = {}
 
