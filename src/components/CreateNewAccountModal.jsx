@@ -8,6 +8,7 @@ import {accountStatementURL} from "./data"
 import createNewAccount from "./createNewAccount";
 
 export default function ModalPopUp() {
+  let parentAccountPage = window.location.reload()
   let history = useHistory()  
   let setAccountStatement = useStore(store => store.setAccountStatement)
   let accountStatement = useStore(store => store.accountStatement)
