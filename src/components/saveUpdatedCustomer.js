@@ -1,6 +1,6 @@
 import {updateCustomerURL} from "./data.js"
 
-export default function saveUpdatedCustomer(updatedCustomer, history, setModal){
+export default function saveUpdatedCustomer(updatedCustomer, setModal, retrieveLoggedInCustomer){
   fetch(updateCustomerURL,{
     credentials: "include",
     method:'PATCH',
@@ -11,9 +11,8 @@ export default function saveUpdatedCustomer(updatedCustomer, history, setModal){
     if (resp.ok) {
       setModal("")
       alert(`Update Successful`)
+      retrieveLoggedInCustomer()
     } else alert("Update unsuccessful. Try a different username")
   })
 }
-
-
 
