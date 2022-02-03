@@ -1,6 +1,6 @@
 import {accountsURL} from "./data.js"
 
-export default function createNewAccount(newAccount, history, setModal){
+export default function createNewAccount(newAccount, setModal, retrieveAccounts){
   fetch(accountsURL,{
     credentials: "include",
     method:'POST',
@@ -10,12 +10,10 @@ export default function createNewAccount(newAccount, history, setModal){
   .then(resp=>{
     if (resp.ok) {
       setModal("")
-      //window.location.reload(false)
-      //window.location.reload()
       alert(`New Account Successfully Created`)
+      retrieveAccounts()
     } else alert("Account Creation Was Unsuccessful")
   })
 }
-
 
 
