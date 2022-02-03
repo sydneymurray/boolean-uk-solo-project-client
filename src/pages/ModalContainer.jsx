@@ -25,7 +25,6 @@ export function ModalContainer() {
   const Modal = modals[modal]
 
   if (!Modal) return null
-  //if (!Modal) history.push("/accounts") 
   return <Modal />
 }
 
