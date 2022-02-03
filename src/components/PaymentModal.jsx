@@ -1,11 +1,9 @@
 import "../styles/PaymentModal.css"
-import {useHistory} from "react-router-dom"
 import  useStore from "../hooks/useStore"
 import makePayment from "./makePayment"
 
 export default function ModalPopUp() {
   const setModal = useStore(store => store.setModal)
-  const history = useHistory()
   let setAccountStatement = useStore(store => store.setAccountStatement)
   let accountStatement = useStore(store => store.accountStatement)
   let accounts = useStore(store => store.accounts)
@@ -23,7 +21,7 @@ export default function ModalPopUp() {
       amount: Number(event.target.amount.value),
       comments: event.target.comments.value
     }
-    makePayment(paymentData, history, setModal, setAccountStatement, accountStatement)
+    makePayment(paymentData, setModal, setAccountStatement, accountStatement)
   }
     
   return <>

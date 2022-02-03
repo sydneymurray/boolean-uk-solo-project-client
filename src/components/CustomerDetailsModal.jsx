@@ -4,8 +4,8 @@ import  useStore from "../hooks/useStore";
 
 export default function ModalPopUp() {
   const setModal = useStore(store => store.setModal)
+  const retrieveLoggedInCustomer = useStore(store => store.retrieveLoggedInCustomer)
   let loggedInCustomer = useStore(store => store.loggedInCustomer)
-  let retrieveLoggedInCustomer = useStore(store => store.retrieveLoggedInCustomer)
 
   function updateCustomer(event){
     event.preventDefault()
