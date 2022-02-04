@@ -20,7 +20,7 @@ const useStore = create((set, get)=>({
   setModal: (modalName, modalData) => {
     set(store => ({modal: modalName, modalData: modalData}))},
   accountStatement: null,
-  setAccountStatement: statement => set(state => ({accountStatement: statement})),
+  setAccountStatement: statement => set(() => ({accountStatement: statement})),
   addTransaction: transaction => set(state => ({...state.accountStatement,
     transactions: [transaction, ...state.accountStatement.transactions]})),
 }))

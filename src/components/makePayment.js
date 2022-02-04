@@ -1,4 +1,5 @@
 import {transactionsURL} from "./data.js"
+import updateSelectedAccount from "./updateSelectedAccount"
 
 export default function makePayment(transactionData, setModal, setAccountStatement, accountStatement) {
   fetch(transactionsURL, {
@@ -9,23 +10,15 @@ export default function makePayment(transactionData, setModal, setAccountStateme
   })
   .then(promise=> promise.json())
   .then(dbResponse=>{
-    console.log(accountStatement)
     if(dbResponse.msg){
       alert(dbResponse.msg)
       return
     }    
     setModal("")
     alert("Payment Succesful")
-    accountStatement.transactions = [dbResponse, ...accountStatement.transactions]
-    let clearedTransactions = accountStatement.account
-    clearedTransactions.transactions = []
-    setAccountStatement(clearedTransactions)
-    setAccountStatement(accountStatement)
+    if (accountStatement!==null) updateSelectedAccount(setAccountStatement, accountStatement) 
   })
 }
-  
-
-
 
 
 

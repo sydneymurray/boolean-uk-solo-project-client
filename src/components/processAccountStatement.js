@@ -45,7 +45,7 @@ function retrievePayerAccountName(transaction){
 }
 
 function retrievePayeeAccountName(transaction){
-    if(transaction.payeeAccount===null) return "CASH WITHDRAWAL" 
+    if(transaction.payeeAccount===null) return "CASH WITHDRAWAL"
     return transaction.accounts_accountsTotransactions_payeeAccount.customers.firstName+" "+
         transaction.accounts_accountsTotransactions_payeeAccount.customers.lastName
 }
