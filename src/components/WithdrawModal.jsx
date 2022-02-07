@@ -1,6 +1,6 @@
 import "../styles/PaymentModal.css"
 import {accountsURL} from "./data";
-import  useStore from "../hooks/useStore"
+import useStore from "../hooks/useStore"
 import {useEffect, useState} from "react"
 import makePayment from "./makePayment"
 
