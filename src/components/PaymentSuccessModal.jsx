@@ -1,3 +1,5 @@
+/* NOT IMPLEMENTED
+
 import "../styles/PaymentSuccessModal.css"
 import {useHistory} from "react-router-dom"
 import {accountsURL} from "./data";
@@ -65,5 +67,5 @@ export default function ModalPopUp() {
   </>
 
 }
-
+*/
 

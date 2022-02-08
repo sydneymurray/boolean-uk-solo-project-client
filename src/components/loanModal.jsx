@@ -1,3 +1,5 @@
+/* NOT YET IMPLEMENTED
+
 import "../styles/PaymentModal.css";
 import {accountsURL} from "./data";
 import  useStore from "../hooks/useStore";

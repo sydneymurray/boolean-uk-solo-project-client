@@ -4,7 +4,7 @@ import  useStore from "../hooks/useStore";
 
 export default function ModalPopUp() {
   const setModal = useStore(store => store.setModal)
-  const retrieveLoggedInCustomer = useStore(store => store.retrieveLoggedInCustomer)
+  const setLoggedInCustomer = useStore(store => store.setLoggedInCustomer)
   let loggedInCustomer = useStore(store => store.loggedInCustomer)
 
   function updateCustomer(event){
@@ -19,7 +19,7 @@ export default function ModalPopUp() {
     function capFirstChar(name){  
       return name.charAt(0).toUpperCase() + name.slice(1)
     }
-    saveUpdatedCustomer(updatedCustomer, setModal, retrieveLoggedInCustomer)
+    saveUpdatedCustomer(updatedCustomer, setModal, loggedInCustomer, setLoggedInCustomer)
   }
 
   return <>
@@ -47,5 +47,4 @@ export default function ModalPopUp() {
     </form>
   </>
 }
-
 

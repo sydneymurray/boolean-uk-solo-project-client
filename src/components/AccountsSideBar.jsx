@@ -4,9 +4,9 @@ import SideBarAccount from "./SideBarAccount"
 
 export default function AccountsSideBar(){
   const setModal = useStore(store => store.setModal)
+  const retrieveLoggedInCustomer = useStore(store => store.retrieveLoggedInCustomer)
   let accounts = useStore(store => store.accounts)
   let loggedInCustomer = useStore(store => store.loggedInCustomer)
-  let retrieveLoggedInCustomer = useStore(store => store.retrieveLoggedInCustomer)
 
   if (!accounts || accounts.err==='Not Logged In') return <></>
   if (!loggedInCustomer) {

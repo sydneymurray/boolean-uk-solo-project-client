@@ -1,6 +1,6 @@
 import registerCustomer from "./registerCustomer";
 import "../styles/RegisterModal.css";
-import  useStore from "../hooks/useStore";
+import useStore from "../hooks/useStore";
 
 export default function ModalPopUp() {
   const setModal = useStore((store) => store.setModal);

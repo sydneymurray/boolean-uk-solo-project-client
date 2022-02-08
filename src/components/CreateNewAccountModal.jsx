@@ -1,9 +1,8 @@
 import "../styles/CreatNewAccountModal.css"
-import  useStore from "../hooks/useStore"
+import useStore from "../hooks/useStore"
 import createNewAccount from "./createNewAccount";
 
 export default function ModalPopUp() {
-
   const retrieveAccounts = useStore(store => store.retrieveAccounts)
   const setModal = useStore(store => store.setModal)
   let loggedInCustomer = useStore(store => store.loggedInCustomer)
@@ -16,6 +15,7 @@ export default function ModalPopUp() {
     }
     createNewAccount(accountData, setModal, retrieveAccounts)
   }
+
   return <>
     <form onSubmit={handleSubmit} className="modal-background">
       <div className="modal">

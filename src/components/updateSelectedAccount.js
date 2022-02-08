@@ -4,7 +4,6 @@ export default function updateSelectedAccount(setAccountStatement, accountStatem
   let clearedTransactions = accountStatement
   clearedTransactions.transactions = []
   setAccountStatement(clearedTransactions)
-  console.log("updateSelectedAccount")  
   
   let account = accountStatement.account
   fetch(accountStatementURL,{
