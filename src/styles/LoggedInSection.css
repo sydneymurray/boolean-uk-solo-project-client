@@ -2,7 +2,7 @@
   display: grid;
   grid-template:
   "account-sidebar-container statement-section-container" auto
-  " payment-sidebar-container statement-section-container " auto
+  "payment-sidebar-container statement-section-container" auto
   " . statement-section-container " auto/
    auto auto;
   grid-gap: 2ch;
@@ -12,4 +12,19 @@
   margin-right: auto;    
   padding-top: 3ch;
   padding-bottom: 3ch;
+}
+
+@media screen and (max-width: 1020px) {
+  .loggedInsection-container{
+    max-width: 510px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .loggedInsection-container{
+    grid-template:
+    ". account-sidebar-container . payment-sidebar-container ." auto
+    "statement-section-container statement-section-container statement-section-container statement-section-container statement-section-container" auto/
+     4fr auto auto auto 4fr;
+  }
 }

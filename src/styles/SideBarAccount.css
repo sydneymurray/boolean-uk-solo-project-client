@@ -10,7 +10,7 @@
 
 .sidebar-account-type{
   grid-area: sidebar-account-type;
-  text-justify: left;
+  text-align: left;
 }
 
 .sidebar-account-number{
@@ -22,4 +22,31 @@
 .sidebar-account-type:hover{
   background-color: blue;
   color: white;    
+}
+
+@media screen and (max-width: 1020px) {
+  .account-h2{
+    display: grid;
+    grid-template:
+    "sidebar-account-type" auto
+    "sidebar-account-number" auto/
+    auto;
+  }
+
+  .sidebar-account-number{
+    grid-area: sidebar-account-number;  
+    text-align: right;
+  }
+  .sidebar-customer-name{
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .account-h2{
+    grid-template:
+    "sidebar-account-type . sidebar-account-number" auto/
+    10ch 1ch 9ch;
+    text-align: left;
+  }
 }

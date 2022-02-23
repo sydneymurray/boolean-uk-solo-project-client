@@ -18,4 +18,18 @@
   margin-bottom: 2px;
 }
 
+@media screen and (max-width: 1020px) {
+  .statement-section-container{
+    width: 45ch;
+    margin-left: auto;
+    margin-right: auto;
 
+  }
+  .non-mobile{
+    display: none
+  }
+  .name{
+    max-width: 15ch;
+  }
+
+}

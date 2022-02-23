@@ -10,6 +10,7 @@
 
 .sidebar-customer-name{
   margin-bottom: 1ch;
+  font-size: 1.4rem;
 }
 
 .sidebar-customer-name:hover{
@@ -17,6 +18,24 @@
   color: white;
 }
 
+@media screen and (max-width: 1020px) {
+  .account-sidebar-container{
+    width: 100px;
+    padding-left: 1ch;
+    padding-right: 1ch;
+  }
+
+  .sidebar-customer-name{
+    margin-bottom: 1ch;
+    font-size: 1.3rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .account-sidebar-container{
+    width: 180px;
+  }
+}
 
  
   

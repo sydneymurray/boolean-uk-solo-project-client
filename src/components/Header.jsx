@@ -4,7 +4,7 @@ export default function Header(){
   return <>
     <section className="header-container">
 
-      <svg className="mainlogo" 
+      <svg className="main-logos" 
           version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" 
           x="0px" y="0px" viewBox="0 0 1748.006 1673.348" enableBackground="new 0 0 1748.006 1673.348" >
         <g><path stroke="#0000ff" fill="midnightblue" strokeWidth="0.204" d="M127.3,389.426C376.182,271.829,625.15,154.341,874.01,36.679
@@ -29,10 +29,10 @@ export default function Header(){
       </svg>
 
       <span className="headerspacer"> </span>
-      <h1 className="main-header">Welcome to Safe-Bank</h1>
+      <h1 className="welcome-to">Welcome to </h1><h1 className="safe-bank">Safe-Bank</h1>
       <span className="headerspacer"></span>
 
-      <svg className="mainlogo" 
+      <svg className="main-logos" 
           version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" 
           x="0px" y="0px" viewBox="0 0 1748.006 1673.348" enableBackground="new 0 0 1748.006 1673.348">
         <g><path stroke="#0000ff" fill="midnightblue" strokeWidth="0.204" d="M127.3,389.426C376.182,271.829,625.15,154.341,874.01,36.679

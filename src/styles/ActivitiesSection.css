@@ -17,3 +17,23 @@
   border: 1px solid aqua;
   transform: scale(1.02);
 }
+
+@media screen and (max-width: 860px) {
+  .activity-image{
+    width: 200px;
+    height: 150px;
+  }
+  h2{
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .activity-image{
+    width: 150px;
+    height: 105px;
+  }
+  h2{
+    font-size: 0.9rem;
+  }
+}

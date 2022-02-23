@@ -16,8 +16,8 @@ export default function AccountsSideBar(){
 
   return <>
     <section className="account-sidebar-container">
-      <h2 className="sidebar-customer-name" onClick={() => setModal("customerDetails")}>
-        {loggedInCustomer.firstName} {loggedInCustomer.lastName}</h2>    
+      <h3 className="sidebar-customer-name" onClick={() => setModal("customerDetails")}>
+        {loggedInCustomer.firstName} {loggedInCustomer.lastName}</h3>    
       {accounts.map((account, index) => <SideBarAccount key={index} account={account}/>)}    
     </section>
   </>       

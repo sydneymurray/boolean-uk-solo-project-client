@@ -3,6 +3,10 @@
   grid-template-columns: 9ch 9ch 22ch 22ch 9ch 9ch 9ch;
   justify-content: left;
   grid-gap: 1ch;
+  width: auto;
+  border-bottom-color: white;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
 }
 
 .transaction-element{
@@ -14,3 +18,8 @@
   text-align: right;
 }
 
+@media screen and (max-width: 1020px) {
+  .transaction{
+    grid-template-columns: 9ch 13ch 9ch 9ch;
+  }
+}

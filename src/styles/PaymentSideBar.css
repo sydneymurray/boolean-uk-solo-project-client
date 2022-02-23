@@ -19,3 +19,30 @@
   background-color: blue;
   color: white;
 }
+
+@media screen and (max-width: 1020px) {
+  .payment-sidebar-container{
+    width: 100px;
+    padding-left: 1ch;
+    padding-right: 1;
+  }
+  .payment-sidebar-option{
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .payment-sidebar-container{
+    width: 150px;
+  }
+
+  .account-h2{
+    grid-template:
+    "sidebar-account-type . sidebar-account-number" auto/
+    10ch 1ch 9ch;
+  }
+
+  .payment-sidebar-option{
+    text-align: center;
+  }
+}
