@@ -47,7 +47,9 @@
     grid-template-columns: auto,  1fr, auto;
   }
   .header-spacer{
-    display: none
+    margin: 0.5ch;
+
   }
+
 }
 
