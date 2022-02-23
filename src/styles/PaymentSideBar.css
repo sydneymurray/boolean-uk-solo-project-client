@@ -24,7 +24,7 @@
   .payment-sidebar-container{
     width: 100px;
     padding-left: 1ch;
-    padding-right: 1;
+    padding-right: 1ch;
   }
   .payment-sidebar-option{
     text-align: left;

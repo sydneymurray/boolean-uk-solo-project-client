@@ -1,3 +1,4 @@
+
 import "../styles/Header.css";
 
 export default function Header(){
@@ -28,9 +29,9 @@ export default function Header(){
       	<polygon points="645.127,594.163 781.591,594.293 802.525,1327.424 626.739,1327.12 	"/></g>
       </svg>
 
-      <span className="headerspacer"> </span>
+      <span className="header-spacer"></span>
       <h1 className="welcome-to">Welcome to </h1><h1 className="safe-bank">Safe-Bank</h1>
-      <span className="headerspacer"></span>
+      <span className="header-spacer"></span>
 
       <svg className="main-logos" 
           version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" 
